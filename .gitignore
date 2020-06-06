@@ -1,3 +1,21 @@
+# untrack binary
+src/books.ser
+src/module-info.java
+Librarian.txt
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+
+# eclipse
+.classpath
+.project
+.settings/
+
+
+
 # Compiled class file
 *.class
 
