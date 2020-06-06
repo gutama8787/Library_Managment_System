@@ -3,13 +3,20 @@ package app;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Map;
@@ -68,5 +75,16 @@ public class IssuedBookController implements Initializable {
          }
 
          return issuedBook;
+    }
+    
+    @FXML
+    private Button backBtn;
+
+    @FXML
+    void back(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("LibrarianSection.fxml"));
+        Scene scene = new Scene(root, 600, 600);
+        Stage stage = (Stage) tableView.getScene().getWindow();
+        stage.setScene(scene);
     }
 }
