@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ViewBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ViewBookController">
    <children>
       <TableView fx:id="tableView" layoutX="26.0" layoutY="38.0" prefHeight="318.0" prefWidth="600.0">
         <columns>
@@ -18,5 +19,6 @@
             <TableColumn id="addedDate" fx:id="addedDate" prefWidth="75.0" text="addedDate" />
         </columns>
       </TableView>
+      <Button fx:id="backBtn" layoutX="536.0" layoutY="408.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="79.0" text="back" />
    </children>
 </AnchorPane>
