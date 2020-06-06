@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -61,6 +62,12 @@ public class AddBooksController {
 				q = Integer.parseInt(quantity.getText());
 				//create a book from the inputs
 				Book book = new Book(name.getText(), CallNo.getText(),author.getText(),publisher.getText(),q);
+				
+				LocalDate localDate = LocalDate.now();
+				
+				String date = localDate.getDayOfMonth()+"/"+localDate.getMonthValue()+"/"+localDate.getYear();
+				
+				book.setAddedDate(date);
 				
 				// get the book data as an array list
 				ArrayList<Book> bookData = getData("src/books.res");

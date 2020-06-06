@@ -14,6 +14,7 @@ public class Book implements Serializable{
 	private String publisher;
 	private int quantity;
 	private int issued;
+	private String date; // added date
 	/**
 	 * @param title
 	 * @param callNo
@@ -28,6 +29,15 @@ public class Book implements Serializable{
 		this.author = author;
 		this.publisher = publisher;
 		this.quantity = quantity;
+	}
+	public Book(String title, String callNo, String author, String publisher, int quantity, String date) {
+		super();
+		this.title = title;
+		this.callNo = callNo;
+		this.author = author;
+		this.publisher = publisher;
+		this.quantity = quantity;
+		this.date = date;
 	}
 	public Book() {
 		// TODO Auto-generated constructor stub
@@ -92,7 +102,12 @@ public class Book implements Serializable{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+	public String getAddedDate() {
+		return this.date;
+	}
+	public void setAddedDate(String date) {
+		this.date = date;
+	}
 	public void subQuantityBy1() {
 		quantity -= 1 ;
 	}

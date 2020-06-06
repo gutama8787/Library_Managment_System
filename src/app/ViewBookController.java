@@ -41,7 +41,7 @@ public class ViewBookController implements Initializable {
     private TableColumn<BookManager, Integer> issued;
 
     @FXML
-    private TableColumn<BookManager, String> date;
+    private TableColumn<BookManager, String> addedDate;
 
 
       @Override
@@ -53,7 +53,7 @@ public class ViewBookController implements Initializable {
         Author.setCellValueFactory(new PropertyValueFactory<BookManager, String>("Author"));
         quantity.setCellValueFactory(new PropertyValueFactory<BookManager, Integer>("quantity"));
         issued.setCellValueFactory(new PropertyValueFactory<BookManager, Integer>("issued"));
-
+        addedDate.setCellValueFactory(new PropertyValueFactory<BookManager, String>("addedDate"));
         tableView.setItems(getBook());
 
     }
@@ -64,8 +64,12 @@ public class ViewBookController implements Initializable {
         libList = FXCollections.observableArrayList();
        ArrayList<Book> lib = FileLoader.loadBooks("src/books.ser");
         for (Book l : lib){
-            libList.add(new BookManager(1, l.getCallNo(), l.getTitle(), l.getAuthor(), l.getPublisher(), l.getQuantity()));
+           // libList.add(new BookManager(1, l.getCallNo(), l.getTitle(), l.getAuthor(), l.getPublisher(), l.getQuantity()));
+            
+            libList.add(new BookManager(1, l.getCallNo(), l.getTitle(), l.getAuthor(), l.getPublisher(), l.getQuantity(),l.getIssued(),l.getAddedDate()));
+
         }
+        
 
         return libList;
     }

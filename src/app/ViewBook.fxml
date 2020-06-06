@@ -15,7 +15,7 @@
             <TableColumn id="publisher" fx:id="publisher" prefWidth="75.0" text="Publisher" />
             <TableColumn id="quantity" fx:id="quantity" prefWidth="75.0" text="quantity" />
             <TableColumn id="issued" fx:id="issued" prefWidth="75.0" text="issued" />
-            <TableColumn id="contact" fx:id="date" prefWidth="75.0" text="added date" />
+            <TableColumn id="addedDate" fx:id="addedDate" prefWidth="75.0" text="addedDate" />
         </columns>
       </TableView>
    </children>

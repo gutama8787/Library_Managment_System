@@ -11,6 +11,7 @@ public class BookManager {
     private SimpleStringProperty Publisher;
     private SimpleIntegerProperty quantity;
     private SimpleIntegerProperty issued;
+    private SimpleStringProperty addedDate;
 
     public BookManager(int id, String callno, String name, String Author, String publisher, int quantity) {
         this.id = new SimpleIntegerProperty(id);
@@ -19,8 +20,21 @@ public class BookManager {
         this.Author = new SimpleStringProperty(Author);
         Publisher = new SimpleStringProperty(publisher);
         this.quantity = new SimpleIntegerProperty(quantity);
+        
     }
 
+    public BookManager(int id, String callno, String name, String Author, String publisher, int quantity, int issued, String addedDate) {
+        this.id = new SimpleIntegerProperty(id);
+        this.callno = new SimpleStringProperty(callno);
+        this.name = new SimpleStringProperty(name);
+        this.Author = new SimpleStringProperty(Author);
+        Publisher = new SimpleStringProperty(publisher);
+        this.quantity = new SimpleIntegerProperty(quantity);
+        this.issued = new SimpleIntegerProperty(issued);
+        this.addedDate = new SimpleStringProperty(addedDate);
+    }
+
+    
     public int getId() {
         return id.get();
     }
@@ -103,5 +117,17 @@ public class BookManager {
 
     public void setIssued(int issued) {
         this.issued.set(issued);
+    }
+    
+    public SimpleStringProperty addedDateProperty() {
+        return addedDate;
+    }
+
+    public void setAddedDate(String addedDate) {
+        this.addedDate.set(addedDate);
+    }
+
+    public String getAddedDate() {
+        return addedDate.get();
     }
 }
